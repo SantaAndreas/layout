@@ -1,9 +1,24 @@
+@font-face {
+    font-family: 'Gilroy';
+    src        : url('../fonts/Gilroy-Medium.eot');
+    src        : url('../fonts/Gilroy-Medium.eot') format('embedded-opentype'),
+        url('../fonts/Gilroy-Medium.woff') format('woff'),
+        url('../fonts/Gilroy-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style : normal;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&display=swap');
-@import './variable.scss', './header.scss', './profile.scss';
+@import './variable.scss', './effects.scss', './header.scss', './profile.scss', './form.scss';
 
 * {
     margin     : 0;
     padding    : 0;
     box-sizing : border-box;
     font-family: 'Montserrat', sans-serif;
+}
+
+// for hide effect elements
+body {
+    overflow-x: hidden;
 }

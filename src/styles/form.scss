@@ -1,0 +1,328 @@
+@import './variable.scss';
+
+.section-form {
+    position        : relative;
+    padding         : 40px 14px;
+    width           : 100%;
+    min-height      : 500px;
+    background-color: $primary-color-ligth;
+
+    @media (min-width: 750px) {
+        padding: 56px 64px;
+    }
+
+    &__title {
+        color      : $base-text-color;
+        font-style : normal;
+        font-weight: 800;
+        font-size  : 32px;
+        line-height: 41px;
+    }
+
+    &__content {
+        position      : relative;
+        z-index       : 2;
+        width         : 100%;
+        min-height    : 100%;
+        display       : flex;
+        flex-direction: column;
+    }
+}
+
+.form {
+    margin-top      : 40px;
+    width           : 100%;
+    min-height      : 100%;
+    display         : flex;
+    flex-direction  : column;
+    align-items     : flex-start;
+    background-color: transparent;
+
+    &__element-group {
+        width           : 100%;
+        min-height      : 100%;
+        display         : flex;
+        flex-direction  : column;
+        background-color: transparent;
+
+        @media (min-width: 750px) {
+            gap            : 32px;
+            flex-direction : row;
+            flex-wrap      : wrap;
+            justify-content: flex-start;
+        }
+
+        //element group for upload file 
+        &_upload {
+            margin-top      : 40px;
+            min-height      : 175px;
+            background-color: $base-color;
+            justify-content : center;
+            align-items     : center;
+            border          : 1px dashed $secondary-color-ligth;
+            border-radius   : 12px;
+
+            @media (min-width: 750px) {
+                max-width     : 979.4px;
+                min-height    : 104px;
+                flex-direction: row;
+            }
+        }
+
+        &_button {
+            margin-top    : 40px;
+            display       : flex;
+            flex-direction: column;
+            align-items   : center;
+
+            @media (min-width: 750px) {
+                flex-direction : row;
+                justify-content: flex-start;
+            }
+        }
+    }
+
+    // label for input
+    &__label {
+        margin-top    : 40px;
+        width         : 100%;
+        color         : $base-text-color;
+        display       : flex;
+        flex-direction: column;
+        font-style    : normal;
+        font-weight   : 600;
+        font-size     : 14px;
+        line-height   : 19px;
+
+        @media (min-width: 750px) {
+            width: 305px;
+
+            &:nth-child(3) {
+                margin-top: 0;
+            }
+        }
+
+        @media (min-width: 1007px) {
+            &:nth-child(3) {
+                margin-top: 40px;
+            }
+        }
+
+        // label upload file
+        &_load {
+            margin       : 0;
+            padding-top  : 15px;
+            width        : 211px;
+            height       : 56px;
+            display      : flex;
+            align-items  : center;
+            color        : $primary-color-dark;
+            border       : 1px solid $primary-color-dark;
+            border-radius: 12px;
+            font-style   : normal;
+            font-weight  : 500;
+            font-size    : 16px;
+            line-height  : 24px;
+            transition   : all 0.2s;
+
+            &:hover,
+            input {
+                cursor          : pointer;
+                background-color: $primary-color-dark;
+                color           : $base-color;
+                border-color    : $primary-color-dark;
+            }
+        }
+    }
+
+    // input elements
+    &__input,
+    &__select {
+        outline      : none;
+        margin-top   : 8px;
+        padding-left : 14px;
+        width        : 100%;
+        height       : 56px;
+        background   : $base-color;
+        color        : inherit;
+        caret-color  : $primary-color-dark;
+        font-style   : normal;
+        font-weight  : normal;
+        font-size    : 16px;
+        line-height  : 24px;
+        border       : 1px solid $secondary-color-ligth;
+        border-radius: 12px;
+
+        @media (min-width: 750px) {}
+
+        &_valid {
+            border-color: $complite-color-dark;
+        }
+
+        &_not-valid {
+            border-color: $complite-color-not-valid;
+        }
+
+        &_correct {
+            border-color: $primary-color-dark;
+        }
+
+        // input upload file
+        &_file-load {
+            margin : 0;
+            padding: 0;
+            opacity: 0;
+        }
+    }
+
+    // button send form
+    &__button {
+        width           : 100%;
+        height          : 56px;
+        background-color: $primary-color-dark;
+        color           : $base-color;
+        border-radius   : 12px;
+        border          : 1px solid transparent;
+        transition      : all 0.2s;
+
+        @media (min-width: 750px) {
+            margin-right: 38px;
+            width       : 212px;
+        }
+
+        &:hover {
+            cursor          : pointer;
+            background-color: $base-color;
+            color           : $primary-color-dark;
+            border-color    : $primary-color-dark;
+        }
+    }
+
+    // elements for show and upload files
+    &__element-text {
+        margin-bottom : 16px;
+        max-width     : 212px;
+        color         : $primary-color-medium;
+        text-align    : center;
+        font-family   : 'Gilroy';
+        font-style    : normal;
+        font-weight   : 500;
+        font-size     : 16px;
+        line-height   : 24px;
+        letter-spacing: 0.03em;
+
+        @media (min-width: 750px) {
+            margin   : 0 16px 0 0;
+            max-width: 318px;
+        }
+    }
+
+    &__completed-text {
+        position   : relative;
+        margin-top : 15px;
+        display    : flex;
+        align-items: center;
+        color      : $base-text-color;
+        font-style : normal;
+        font-weight: 500;
+        font-size  : 16px;
+        line-height: 20px;
+
+        @media (min-width: 750px) {
+            margin-top: 0;
+        }
+
+        &::before {
+            content         : '';
+            position        : absolute;
+            left            : -48px;
+            display         : flex;
+            width           : 32px;
+            height          : 32px;
+            background-color: $complite-color;
+            border-radius   : 50%;
+        }
+
+        &::after {
+            content      : '';
+            position     : absolute;
+            left         : -40px;
+            width        : 13px;
+            height       : 5px;
+            display      : inline;
+            border-left  : 3px solid $complite-color-dark;
+            border-bottom: 3px solid $complite-color-dark;
+            transform    : rotate(-45deg);
+        }
+    }
+}
+
+.show-upload {
+    margin-top     : 8px;
+    padding        : 0 12px;
+    width          : 100%;
+    height         : 56px;
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+    background     : $base-color;
+    border         : 1px solid $secondary-color-ligth;
+    border-radius  : 12px;
+
+    @media (min-width: 750px) {
+        width: 256px;
+    }
+
+    &__info {
+        display: flex;
+    }
+
+    &__image {
+        margin-right: 8px;
+        width       : 40px;
+        height      : 40px;
+
+        img {
+            width        : 100%;
+            height       : 100%;
+            border-radius: 50%;
+        }
+    }
+
+    &__desc {
+        display       : flex;
+        flex-direction: column;
+    }
+
+    &__title {
+        color      : $base-text-color;
+        font-style : normal;
+        font-weight: normal;
+        font-size  : 14px;
+        line-height: 18px;
+    }
+
+    &__format {
+        color      : $base-text-color-medium;
+        font-style : normal;
+        font-weight: normal;
+        font-size  : 12px;
+        line-height: 18px;
+    }
+
+    &__icon-delete {
+        display        : flex;
+        justify-content: center;
+        align-items    : center;
+        width          : 25px;
+        height         : 25px;
+        border         : 1px solid transparent;
+        border-radius  : 35%;
+        transition     : all 0.2s;
+
+        &:hover {
+            cursor      : pointer;
+            border-color: $primary-color-dark;
+        }
+    }
+}

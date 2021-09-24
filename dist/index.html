@@ -30,6 +30,7 @@
     <section class="section-profile">
         <div class="profile">
             <div class="profile__image">
+                <div class="cub-effect"></div>
                 <img src="/profPhoto.585ad1ff.png" alt="profile-photo">
             </div>
             <div class="profile__description">
@@ -60,6 +61,73 @@
                     </p>
                 </div>
             </div>
+        </div>
+    </section>
+    <!-- section form -->
+    <section class="section-form">
+        <div class="cub-effect cub-effect_form"></div>
+        <div class="cub-effect cub-effect_form-plain-color"></div>
+        <div class="section-form__content">
+            <h2 class="section-form__title">Tell us about yourself</h2>
+            <form class="form">
+                <div class="form__element-group">
+                    <label class="form__label">
+                        Your name
+                        <input type="text" class="form__input" placeholder="Tell us your name">
+                    </label>
+                    <label class="form__label">
+                        Your gender
+                        <select class="form__select">
+                            <option value="default">Chose your gender</option>
+                            <option value="female">Female</option>
+                            <option value="male">Male</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="form__element-group">
+                    <label class="form__label">
+                        Your country
+                        <input type="text" class="form__input" placeholder="Where are you from?">
+                    </label>
+                    <label class="form__label">
+                        Your City
+                        <input type="text" class="form__input" placeholder="Your native city">
+                    </label>
+                    <label class="form__label">
+                        Your date of birth
+                        <input type="text" class="form__input" placeholder="dd.mm.yyyy">
+                    </label>
+                </div>
+                <div class="form__element-group form__element-group_upload">
+                    <p class="form__element-text">Proof your identity with some documents</p>
+                    <label class="form__label form__label_load">
+                        Add document
+                        <input type="file" class="form__input form__input_file-load">
+                    </label>
+                </div>
+                <div class="show-upload">
+                    <div class="show-upload__info">
+                        <div class="show-upload__image">
+                            <img src="/upload.e9e6190b.png" alt="upload-image">
+                        </div>
+                        <div class="show-upload__desc">
+                            <p class="show-upload__tite">upload.png</p>
+                            <p class="show-upload__format">JPG 2,5 mb</p>
+                        </div>
+                    </div>
+                    <div class="show-upload__icon-delete">
+                        <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.41797 3L3.78059 1H7.89034L8.25297 3" stroke="#8E43ED" stroke-width="1.33333" stroke-linejoin="round"></path>
+                            <path d="M1 3H10.67" stroke="#8E43ED" stroke-width="1.33333" stroke-linecap="round"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10.0657 3L9.15918 12.3333H2.51105L1.60449 3H10.0657Z" stroke="#8E43ED" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="form__element-group form__element-group_button">
+                    <button class="form__button">Send info</button>
+                    <p class="form__completed-text">Completed</p>
+                </div>
+            </form>
         </div>
     </section>
     <script src="/app.c3f9f951.js"></script>

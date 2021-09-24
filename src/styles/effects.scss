@@ -1,0 +1,103 @@
+@import './variable.scss';
+
+.cub-effect {
+    z-index         : 2;
+    position        : absolute;
+    bottom          : 62px;
+    right           : 6.9px;
+    width           : 32px;
+    height          : 32px;
+    background-color: $primary-color-dark;
+    border-radius   : 10px;
+    transform       : matrix(0.37, -0.93, -0.93, -0.37, 0, 0);
+
+    @media (min-width: 768px) {
+        right        : none;
+        left         : -38px;
+        bottom       : 71px;
+        width        : 52px;
+        height       : 52px;
+        border-radius: 16px;
+        transform    : rotate(-111.94deg);
+    }
+
+    &::before {
+        position        : absolute;
+        content         : '';
+        border-radius   : 16px;
+        bottom          : -8px;
+        right           : 50px;
+        width           : 56px;
+        height          : 56px;
+        background-color: $secondary-color-dark;
+        border-radius   : 16px;
+        transform       : matrix(0.62, 0.79, 0.79, -0.62, 0, 0);
+
+        @media (min-width: 768px) {
+            right        : none;
+            left         : -98px;
+            bottom       : 2px;
+            width        : 85px;
+            height       : 85px;
+            border-radius: 24px;
+            transform    : rotate(154deg);
+        }
+    }
+}
+
+.cub-effect_form,
+.cub-effect_form-plain-color {
+    z-index  : 0;
+    top      : 96px;
+    left     : none;
+    right    : 75px;
+    transform: matrix(-0.79, 0.62, 0.62, 0.79, 0, 0);
+
+    @media (min-width: 768px) {
+        top      : 47px;
+        right    : -40px;
+        left     : auto;
+        width    : 136px;
+        height   : 136px;
+        transform: rotate(15deg);
+    }
+
+    &::before {
+        transform: matrix(-0.14, -0.99, -0.99, 0.14, 0, 0);
+
+        @media (min-width: 768px) {
+            top      : 244px;
+            left     : auto;
+            right    : -64px;
+            width    : 208px;
+            height   : 208px;
+            transform: rotate(16deg);
+        }
+    }
+
+    &::after {
+        display: none;
+
+        @media (min-width: 768px) {
+            content         : '';
+            position        : absolute;
+            top             : 157px;
+            right           : 173px;
+            width           : 86px;
+            height          : 86px;
+            background-color: $secondary-color-extra-ligth;
+            display         : block;
+            border-radius   : 16px;
+            transform       : rotate(32deg)
+        }
+    }
+}
+
+.cub-effect_form-plain-color {
+    display         : none;
+    background-color: $secondary-color-super-extra-ligth;
+
+    @media (min-width: 768px) {
+        display: block;
+    }
+}

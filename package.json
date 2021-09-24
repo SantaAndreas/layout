@@ -1,14 +1,14 @@
 {
   "name": "layout",
   "version": "1.0.0",
-  "description": "",
+  "description": "layout with used parcel + scss(BEM)",
   "main": "index.js",
   "scripts": {
     "dev": "parcel src/index.html",
     "build": "parcel build src/index.html"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["test for frontend developer (React)"],
+  "author": "Andrei Blashchuk",
   "license": "ISC",
   "devDependencies": {
     "parcel-bundler": "^1.12.5",
