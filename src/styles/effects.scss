@@ -54,7 +54,7 @@
     transform: matrix(-0.79, 0.62, 0.62, 0.79, 0, 0);
 
     @media (min-width: 768px) {
-        top      : 47px;
+        top      : 79px;
         right    : -40px;
         left     : auto;
         width    : 136px;
@@ -94,10 +94,19 @@
 }
 
 .cub-effect_form-plain-color {
-    display         : none;
-    background-color: $secondary-color-super-extra-ligth;
+    display: none;
+
+    &::after,
+    &::before {
+        background-color: $secondary-color-super-extra-ligth;
+    }
 
     @media (min-width: 768px) {
-        display: block;
+        background-color: $secondary-color-super-extra-ligth;
+        top             : 79px;
+        left            : -40px;
+        right           : auto;
+        display         : block;
+        transform       : scale(-1, 1) rotate(15deg);
     }
 }

@@ -63,7 +63,7 @@
 @media (min-width: 768px) {
   .cub-effect_form,
 .cub-effect_form-plain-color {
-    top: 47px;
+    top: 79px;
     right: -40px;
     left: auto;
     width: 136px;
@@ -108,11 +108,18 @@
 
 .cub-effect_form-plain-color {
   display: none;
+}
+.cub-effect_form-plain-color::after, .cub-effect_form-plain-color::before {
   background-color: #F2E9FF;
 }
 @media (min-width: 768px) {
   .cub-effect_form-plain-color {
+    background-color: #F2E9FF;
+    top: 79px;
+    left: -40px;
+    right: auto;
     display: block;
+    transform: scale(-1, 1) rotate(15deg);
   }
 }
 
