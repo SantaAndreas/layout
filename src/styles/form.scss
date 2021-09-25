@@ -4,10 +4,10 @@
     position        : relative;
     padding         : 40px 14px;
     width           : 100%;
-    min-height      : 500px;
+    min-height      : 750px;
     background-color: $primary-color-ligth;
 
-    @media (min-width: 750px) {
+    @media (min-width: 768px) {
         padding: 56px 64px;
     }
 
@@ -52,11 +52,17 @@
             justify-content: flex-start;
         }
 
+        // element group second
+        &_second {
+            display: none;
+        }
+
         //element group for upload file 
         &_upload {
             margin-top      : 40px;
             min-height      : 175px;
             background-color: $base-color;
+            display         : none;
             justify-content : center;
             align-items     : center;
             border          : 1px dashed $secondary-color-ligth;
@@ -72,6 +78,7 @@
         &_button {
             margin-top    : 40px;
             display       : flex;
+            display       : none;
             flex-direction: column;
             align-items   : center;
 
@@ -262,7 +269,7 @@
     padding        : 0 12px;
     width          : 100%;
     height         : 56px;
-    display        : flex;
+    display        : none;
     justify-content: space-between;
     align-items    : center;
     background     : $base-color;
@@ -311,14 +318,15 @@
     }
 
     &__icon-delete {
-        display        : flex;
-        justify-content: center;
-        align-items    : center;
-        width          : 25px;
-        height         : 25px;
-        border         : 1px solid transparent;
-        border-radius  : 35%;
-        transition     : all 0.2s;
+        width           : 25px;
+        height          : 25px;
+        display         : flex;
+        justify-content : center;
+        align-items     : center;
+        background-color: transparent;
+        border          : 1px solid transparent;
+        border-radius   : 35%;
+        transition      : all 0.2s;
 
         &:hover {
             cursor      : pointer;

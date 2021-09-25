@@ -77,29 +77,31 @@
                 <div class="form__element-group">
                     <label class="form__label">
                         Your name
-                        <input type="text" class="form__input" placeholder="Tell us your name">
+                        <input id='inputName' type="text" class="form__input" placeholder="Tell us your name">
                     </label>
                     <label class="form__label">
                         Your gender
-                        <select class="form__select">
+                        <select id='selectGender' class="form__select">
                             <option value="default">Chose your gender</option>
                             <option value="female">Female</option>
                             <option value="male">Male</option>
                         </select>
                     </label>
                 </div>
-                <div class="form__element-group">
+                <div class="form__element-group form__element-group_second">
                     <label class="form__label">
                         Your country
-                        <input type="text" class="form__input" placeholder="Where are you from?">
+                        <input id='inputCountry' type="text" class="form__input" placeholder="Where are you from?">
                     </label>
                     <label class="form__label">
                         Your City
-                        <input type="text" class="form__input" placeholder="Your native city">
+                        <input id='inputCity' type="text" class="form__input" placeholder="Your native city">
                     </label>
                     <label class="form__label">
                         Your date of birth
-                        <input type="text" class="form__input" placeholder="dd.mm.yyyy">
+                        <p class="test"></p>
+                        <input id='inputBirth' autocomplete="off" type="text" class="form__input"
+                            placeholder="dd.mm.yyyy" maxlength='10'>
                     </label>
                 </div>
                 <div class="form__element-group form__element-group_upload">
@@ -112,14 +114,14 @@
                 <div class="show-upload">
                     <div class="show-upload__info">
                         <div class="show-upload__image">
-                            <img src="./img/upload.png" alt="upload-image">
+                            <img src="./img/uploadDef.png" alt="t" id='imgLoad'>
                         </div>
                         <div class="show-upload__desc">
-                            <p class="show-upload__tite">upload.png</p>
-                            <p class="show-upload__format">JPG 2,5 mb</p>
+                            <p class="show-upload__tite">Select image</p>
+                            <p class="show-upload__format">image format</p>
                         </div>
                     </div>
-                    <div class="show-upload__icon-delete">
+                    <button class="show-upload__icon-delete">
                         <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3.41797 3L3.78059 1H7.89034L8.25297 3" stroke="#8E43ED" stroke-width="1.33333"
                                 stroke-linejoin="round" />
@@ -128,7 +130,7 @@
                                 d="M10.0657 3L9.15918 12.3333H2.51105L1.60449 3H10.0657Z" stroke="#8E43ED"
                                 stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
-                    </div>
+                    </button>
                 </div>
                 <div class="form__element-group form__element-group_button">
                     <button class="form__button">Send info</button>
