@@ -1,3 +1,4 @@
+const allInputs = document.querySelectorAll('.form__element');
 const inputName = document.querySelector('#inputName');
 const selectGender = document.querySelector('#selectGender');
 const inputCountry = document.querySelector('#inputCountry');
@@ -14,6 +15,15 @@ let selectGenderValid = false;
 let inputCountryValid = false;
 let inputCityValid = false;
 let inputBirthValid = false;
+
+// onblur delete classes
+allInputs.forEach(item => {
+    item.addEventListener('blur', () => {
+        if (item.classList.contains('form__input_valid')) {
+            item.classList.remove('form__input_valid')
+        }
+    })
+})
 
 // input name
 inputName.addEventListener('focus', e => {

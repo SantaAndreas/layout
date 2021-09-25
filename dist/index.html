@@ -73,11 +73,11 @@
                 <div class="form__element-group">
                     <label class="form__label">
                         Your name
-                        <input id="inputName" type="text" class="form__input" placeholder="Tell us your name">
+                        <input id="inputName" type="text" class="form__input form__element" placeholder="Tell us your name">
                     </label>
                     <label class="form__label">
                         Your gender
-                        <select id="selectGender" class="form__select">
+                        <select id="selectGender" class="form__select form__element">
                             <option value="default">Chose your gender</option>
                             <option value="female">Female</option>
                             <option value="male">Male</option>
@@ -87,23 +87,23 @@
                 <div class="form__element-group form__element-group_second">
                     <label class="form__label">
                         Your country
-                        <input id="inputCountry" type="text" class="form__input" placeholder="Where are you from?">
+                        <input autocomplete="off" id="inputCountry" type="text" class="form__input form__element" placeholder="Where are you from?">
                     </label>
                     <label class="form__label">
                         Your City
-                        <input id="inputCity" type="text" class="form__input" placeholder="Your native city">
+                        <input autocomplete="off" id="inputCity" type="text" class="form__input form__element" placeholder="Your native city">
                     </label>
                     <label class="form__label">
                         Your date of birth
                         <p class="test"></p>
-                        <input id="inputBirth" autocomplete="off" type="text" class="form__input" placeholder="dd.mm.yyyy" maxlength="10">
+                        <input id="inputBirth" autocomplete="off" type="text" class="form__input form__element" placeholder="dd.mm.yyyy" maxlength="10">
                     </label>
                 </div>
                 <div class="form__element-group form__element-group_upload">
                     <p class="form__element-text">Proof your identity with some documents</p>
                     <label class="form__label form__label_load">
                         Add document
-                        <input type="file" class="form__input form__input_file-load">
+                        <input autocomplete="off" type="file" class="form__input form__input_file-load">
                     </label>
                 </div>
                 <div class="show-upload">
@@ -125,7 +125,7 @@
                     </button>
                 </div>
                 <div class="form__element-group form__element-group_button">
-                    <button class="form__button">Send info</button>
+                    <button class="form__button" disabled="">Send info</button>
                     <p class="form__completed-text">Completed</p>
                 </div>
             </form>

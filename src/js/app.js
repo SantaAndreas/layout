@@ -1,2 +1,2 @@
-// import './upload';
+import './upload';
 import './validate';

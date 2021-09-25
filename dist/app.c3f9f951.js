@@ -117,7 +117,57 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"js/validate.js":[function(require,module,exports) {
+})({"js/upload.js":[function(require,module,exports) {
+var labelUpload = document.querySelector('.form__label_load');
+var inputUpload = document.querySelector('.form__input_file-load');
+var imageUpload = document.querySelector('#imgLoad');
+var showUpload = document.querySelector('.show-upload');
+var titleUpload = document.querySelector('.show-upload__tite');
+var formatUpload = document.querySelector('.show-upload__format');
+var deleteUpload = document.querySelector('.show-upload__icon-delete');
+var formButton = document.querySelector('.form__button');
+var completedText = document.querySelector('.form__completed-text');
+var wasPostForm = false; // function load image
+
+inputUpload.addEventListener('change', function (e) {
+  var file = e.target.value;
+  var fortam = file.split('.');
+  var fullTitle = file.replace(/^.*[\\\/]/, '');
+  var subTitle = fullTitle.split('.'); // на хосте должен коректно работать, в сборщике Parcel - надо настраивать статику.
+
+  imageUpload.setAttribute('src', "./img/".concat(fullTitle));
+  titleUpload.textContent = subTitle[0];
+  formatUpload.textContent = fortam[1];
+  formButton.removeAttribute('disabled');
+});
+labelUpload.addEventListener('click', function () {
+  showUpload.style.opacity = 1;
+}); // function clear image
+
+deleteUpload.addEventListener('click', function (e) {
+  e.preventDefault();
+  imageUpload.setAttribute('src', './img/uploadDef.png');
+  titleUpload.textContent = '';
+  formatUpload.textContent = '';
+  showUpload.style.opacity = 0;
+  formButton.setAttribute('disabled', true);
+  completedText.style.display = 'none';
+  wasPostForm = false;
+}); // post file
+
+formButton.addEventListener('click', function (e) {
+  e.preventDefault();
+  wasPostForm = true;
+  formButton.setAttribute('disabled', true);
+
+  if (wasPostForm) {
+    completedText.style.display = 'flex';
+  } else {
+    completedText.style.display = 'none';
+  }
+});
+},{}],"js/validate.js":[function(require,module,exports) {
+var allInputs = document.querySelectorAll('.form__element');
 var inputName = document.querySelector('#inputName');
 var selectGender = document.querySelector('#selectGender');
 var inputCountry = document.querySelector('#inputCountry');
@@ -131,7 +181,15 @@ var inputNameValid = false;
 var selectGenderValid = false;
 var inputCountryValid = false;
 var inputCityValid = false;
-var inputBirthValid = false; // input name
+var inputBirthValid = false; // onblur delete classes
+
+allInputs.forEach(function (item) {
+  item.addEventListener('blur', function () {
+    if (item.classList.contains('form__input_valid')) {
+      item.classList.remove('form__input_valid');
+    }
+  });
+}); // input name
 
 inputName.addEventListener('focus', function (e) {
   var currentValue = e.target.value;
@@ -334,8 +392,10 @@ function checkerSecondGroup() {
 },{}],"js/app.js":[function(require,module,exports) {
 "use strict";
 
+require("./upload");
+
 require("./validate");
-},{"./validate":"js/validate.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./upload":"js/upload.js","./validate":"js/validate.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -363,7 +423,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51264" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55544" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

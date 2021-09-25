@@ -288,10 +288,12 @@
 .form {
   margin-top: 40px;
   width: 100%;
-  min-height: 100%;
+  min-height: 550px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: space-between;
   background-color: transparent;
 }
 .form__element-group {
@@ -332,7 +334,6 @@
 .form__element-group_button {
   margin-top: 40px;
   display: flex;
-  display: none;
   flex-direction: column;
   align-items: center;
 }
@@ -434,6 +435,15 @@
     width: 212px;
   }
 }
+.form__button:disabled {
+  background-color: #DED9E4;
+}
+.form__button:disabled:hover {
+  cursor: not-allowed;
+  color: #ffffff;
+  background-color: #DED9E4;
+  border-color: #DED9E4;
+}
 .form__button:hover {
   cursor: pointer;
   background-color: #ffffff;
@@ -461,7 +471,7 @@
 .form__completed-text {
   position: relative;
   margin-top: 15px;
-  display: flex;
+  display: none;
   align-items: center;
   color: #303030;
   font-style: normal;
@@ -497,11 +507,12 @@
 }
 
 .show-upload {
+  opacity: 0;
   margin-top: 8px;
   padding: 0 12px;
   width: 100%;
   height: 56px;
-  display: none;
+  display: flex;
   justify-content: space-between;
   align-items: center;
   background: #ffffff;
