@@ -176,12 +176,11 @@ var inputBirth = document.querySelector('#inputBirth');
 var secondGroup = document.querySelector('.form__element-group_second');
 var uploadGroup = document.querySelector('.form__element-group_upload');
 var showUpload = document.querySelector('.show-upload');
-var buttonGroup = document.querySelector('.form__element-group_button');
 var inputNameValid = false;
 var selectGenderValid = false;
 var inputCountryValid = false;
 var inputCityValid = false;
-var inputBirthValid = false; // onblur delete classes
+var inputBirthValid = false; // onblur delete success valid classes
 
 allInputs.forEach(function (item) {
   item.addEventListener('blur', function () {
@@ -243,7 +242,7 @@ function selectValid(e) {
     selectGenderValid = true;
     checkerFirstGroup();
   }
-} // function checker if first group input === true ? rflex second group else none 
+} // function checker if first group input === true ? second group flex : none 
 
 
 function checkerFirstGroup() {
@@ -319,7 +318,7 @@ inputBirth.addEventListener('input', checkerBirth); // check valid input birth
 function checkerBirth(e) {
   var currentValue = e.target.value;
   var dotLetter = '.';
-  var fullBirthMask = [];
+  var fullBirthMask = []; // started hell DRY... need code review
 
   if (currentValue[0]) {
     fullBirthMask = [currentValue[0]].join('');
@@ -351,11 +350,6 @@ function checkerBirth(e) {
     inputBirth.value = fullBirthMask;
   }
 
-  if (currentValue[0] && currentValue[1] && currentValue[2] && currentValue[3] && currentValue[4] && currentValue[5] && currentValue[6] && currentValue[7]) {
-    fullBirthMask = [currentValue[0], currentValue[1], dotLetter, currentValue[3], currentValue[4], dotLetter, currentValue[6], currentValue[7], currentValue[8]].join('');
-    inputBirth.value = fullBirthMask;
-  }
-
   if (currentValue[0] && currentValue[1] && currentValue[2] && currentValue[3] && currentValue[4] && currentValue[5] && currentValue[6] && currentValue[7] && currentValue[8]) {
     fullBirthMask = [currentValue[0], currentValue[1], dotLetter, currentValue[3], currentValue[4], dotLetter, currentValue[6], currentValue[7], currentValue[8], currentValue[9]].join('');
     inputBirth.value = fullBirthMask;
@@ -382,20 +376,32 @@ function checkerSecondGroup() {
   if (inputCountryValid && inputCityValid && inputBirthValid) {
     uploadGroup.style.display = 'flex';
     showUpload.style.display = 'flex';
-    buttonGroup.style.display = 'flex';
   } else {
     uploadGroup.style.display = 'none';
     showUpload.style.display = 'none';
-    buttonGroup.style.display = 'none';
   }
 }
+},{}],"js/navigation.js":[function(require,module,exports) {
+var links = document.querySelectorAll('.header__link');
+links.forEach(function (link) {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+    var linkHREF = link.getAttribute('href');
+    document.querySelector(linkHREF).scrollIntoView({
+      behavior: 'smooth',
+      block: "start"
+    });
+  });
+});
 },{}],"js/app.js":[function(require,module,exports) {
 "use strict";
 
 require("./upload");
 
 require("./validate");
-},{"./upload":"js/upload.js","./validate":"js/validate.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+
+require("./navigation");
+},{"./upload":"js/upload.js","./validate":"js/validate.js","./navigation":"js/navigation.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;

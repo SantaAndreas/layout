@@ -288,12 +288,12 @@
 .form {
   margin-top: 40px;
   width: 100%;
-  min-height: 550px;
+  min-height: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: flex-start;
   background-color: transparent;
 }
 .form__element-group {
@@ -569,6 +569,15 @@
 .show-upload__icon-delete:hover {
   cursor: pointer;
   border-color: #8E43ED;
+}
+
+.section-slider {
+  padding: 32px 14px;
+  width: 100%;
+  min-height: 500px;
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
 }
 
 * {

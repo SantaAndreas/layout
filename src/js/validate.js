@@ -8,7 +8,6 @@ const inputBirth = document.querySelector('#inputBirth');
 const secondGroup = document.querySelector('.form__element-group_second');
 const uploadGroup = document.querySelector('.form__element-group_upload');
 const showUpload = document.querySelector('.show-upload');
-const buttonGroup = document.querySelector('.form__element-group_button');
 
 let inputNameValid = false;
 let selectGenderValid = false;
@@ -16,7 +15,7 @@ let inputCountryValid = false;
 let inputCityValid = false;
 let inputBirthValid = false;
 
-// onblur delete classes
+// onblur delete success valid classes
 allInputs.forEach(item => {
     item.addEventListener('blur', () => {
         if (item.classList.contains('form__input_valid')) {
@@ -79,7 +78,7 @@ function selectValid(e) {
     }
 }
 
-// function checker if first group input === true ? rflex second group else none 
+// function checker if first group input === true ? second group flex : none 
 
 function checkerFirstGroup() {
 
@@ -158,6 +157,8 @@ function checkerBirth(e) {
     let dotLetter = '.'
 
     let fullBirthMask = []
+
+    // started hell DRY... need code review
 
     if (currentValue[0]) {
         fullBirthMask = [currentValue[0]].join('')
@@ -251,29 +252,6 @@ function checkerBirth(e) {
         && currentValue[5]
         && currentValue[6]
         && currentValue[7]
-    ) {
-        fullBirthMask = [
-            currentValue[0],
-            currentValue[1],
-            dotLetter,
-            currentValue[3],
-            currentValue[4],
-            dotLetter,
-            currentValue[6],
-            currentValue[7],
-            currentValue[8]
-        ].join('')
-        inputBirth.value = fullBirthMask
-    }
-
-    if (currentValue[0]
-        && currentValue[1]
-        && currentValue[2]
-        && currentValue[3]
-        && currentValue[4]
-        && currentValue[5]
-        && currentValue[6]
-        && currentValue[7]
         && currentValue[8]
     ) {
         fullBirthMask = [
@@ -324,11 +302,9 @@ function checkerSecondGroup() {
     if (inputCountryValid && inputCityValid && inputBirthValid) {
         uploadGroup.style.display = 'flex'
         showUpload.style.display = 'flex'
-        buttonGroup.style.display = 'flex'
     } else {
         uploadGroup.style.display = 'none'
         showUpload.style.display = 'none'
-        buttonGroup.style.display = 'none'
     }
 }
 
