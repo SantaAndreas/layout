@@ -1,9 +1,153 @@
 .section-slider {
-    padding            : 32px 14px;
+    position           : relative;
+    padding            : 32px $padding;
     width              : 100%;
     // min-height      : 100%;
     min-height         : 500px;
     display            : flex;
     justify-content    : center;
     background-color   : transparent;
+
+    @media (min-width: 768px) {
+        padding: $padding-desctop;
+    }
+
+    &__description {
+        position      : absolute;
+        z-index       : 4;
+        top           : calc(50% - 84px);
+        max-width     : 80%;
+        height        : 168px;
+        display       : flex;
+        flex-direction: column;
+        text-align    : center;
+
+        @media (min-width: 768px) {
+            top    : calc(50% - 58px);
+            padding: 0 62px;
+        }
+    }
+
+    &__title {
+        color      : $base-color;
+        font-weight: 800;
+        font-size  : 40px;
+        line-height: 48px;
+    }
+
+    &__text {
+        color      : $base-color;
+        font-weight: 500;
+        font-size  : 15px;
+        line-height: 24px;
+    }
+}
+
+.slider {
+    width     : 100%;
+    min-height: 539px;
+    position  : relative;
+    overflow-x: hidden;
+
+    &__arrow {
+        bottom          : 40px;
+        left            : 30px;
+        width           : 20px;
+        height          : 24px;
+        background-color: transparent;
+        border          : none;
+        position        : absolute;
+        z-index         : 5;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        @media (min-width: 768px) {
+            top   : calc(50% - 12px);
+            bottom: auto;
+        }
+
+        &::before,
+        &::after {
+            content         : '';
+            display         : block;
+            margin-top      : 5px;
+            width           : 18px;
+            height          : 2px;
+            background-color: $base-color;
+            border-radius   : 1px;
+            transform       : rotate(135deg);
+        }
+
+        &::after {
+            margin-top: 10px;
+            transform : rotate(225deg);
+        }
+
+        &_rigth {
+            left     : auto;
+            right    : 30px;
+            transform: rotate(180deg);
+        }
+    }
+
+    &__content {
+        overflow-x   : hidden;
+        position     : absolute;
+        width        : 100%;
+        height       : 100%;
+        border-radius: 24px;
+
+        @media (min-width: 768px) {
+            border-radius: 32px;
+        }
+    }
+
+    &__elements {
+        display   : flex;
+        flex-wrap : nowrap;
+        position  : absolute;
+        top       : 0;
+        left      : 0;
+        transition: all ease 1s;
+    }
+
+    &__wrapper-element {
+        width: 100vw;
+    }
+
+    &__item {
+        display   : flex;
+        max-width : 100%;
+        overflow-x: hidden;
+    }
+
+    &__dot {
+        position        : absolute;
+        bottom          : 12px;
+        width           : 12px;
+        height          : 12px;
+        background-color: transparent;
+        border-radius   : 50%;
+        left            : calc(50% - 6px);
+        border          : 2px solid $base-color;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &_active {
+            background-color: $base-color;
+        }
+
+        &_left {
+            left: calc(50% - 30px);
+        }
+
+        &_rigth {
+            left : auto;
+            right: calc(50% - 30px);
+        }
+    }
 }

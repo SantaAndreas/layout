@@ -393,6 +393,47 @@ links.forEach(function (link) {
     });
   });
 });
+},{}],"js/slider.js":[function(require,module,exports) {
+// DOM elements
+var leftArrow = document.querySelector('.slider__arrow_left');
+var rigthArrow = document.querySelector('.slider__arrow_rigth');
+var leftDot = document.querySelector('.slider__dot_left');
+var middleDot = document.querySelector('.slider__dot_middle');
+var rigthDot = document.querySelector('.slider__dot_rigth'); // Length array images in slider
+
+var allImages = document.querySelectorAll('.slider__item'); // size (width) one image in slider 
+
+var widthImage = document.querySelector('.slider__wrapper-element').clientWidth; // wrapper all images
+
+var sliderElementsBlock = document.querySelector('.slider__elements'); // start position slader images
+
+var startPosition = 0; // prev arrow slide
+
+leftArrow.addEventListener('click', function (e) {
+  if (startPosition <= 0) {
+    sliderElementsBlock.style.left = allImages.length * widthImage + 'px';
+    startPosition = allImages.length * widthImage;
+  }
+
+  startPosition -= widthImage;
+  console.log(startPosition);
+  sliderElementsBlock.style.left = -startPosition + 'px';
+}); // next arrow slide
+
+rigthArrow.addEventListener('click', function (e) {
+  startPosition += widthImage;
+  sliderElementsBlock.style.left = -startPosition + 'px';
+
+  if (startPosition >= allImages.length * widthImage) {
+    sliderElementsBlock.style.left = 0 + 'px';
+    startPosition = 0;
+  }
+}); // for correct check resize window 
+
+window.addEventListener('resize', function () {
+  console.log('resize');
+  widthImage = document.querySelector('.slider__wrapper-element').clientWidth;
+});
 },{}],"js/app.js":[function(require,module,exports) {
 "use strict";
 
@@ -401,7 +442,9 @@ require("./upload");
 require("./validate");
 
 require("./navigation");
-},{"./upload":"js/upload.js","./validate":"js/validate.js","./navigation":"js/navigation.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+
+require("./slider");
+},{"./upload":"js/upload.js","./validate":"js/validate.js","./navigation":"js/navigation.js","./slider":"js/slider.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -429,7 +472,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55544" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51243" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

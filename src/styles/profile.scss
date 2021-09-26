@@ -9,7 +9,7 @@
 }
 
 .profile {
-    padding         : 0 14px 58px;
+    padding         : 0 $padding 58px;
     width           : 100%;
     min-height      : auto;
     display         : flex;
@@ -19,7 +19,7 @@
     background-color: $base-color;
 
     @media (min-width: 768px) {
-        padding                   : 100px 64px;
+        padding                   : 100px $padding-desctop;
         flex-direction            : row;
         gap                       : 32px;
         border-top-left-radius    : 25%;
@@ -47,7 +47,6 @@
     &__name {
         margin-bottom: 16px;
         color        : $base-text-color;
-        font-style   : normal;
         font-weight  : 800;
         font-size    : 40px;
         line-height  : 48px;
@@ -69,7 +68,6 @@
 
         .text-key {
             color      : $secondary-color;
-            font-style : normal;
             font-weight: bold;
             font-size  : 14px;
             line-height: 18px;
@@ -77,7 +75,6 @@
 
         .text-value {
             color      : $base-text-color;
-            font-style : normal;
             font-weight: 500;
             font-size  : 14px;
             line-height: 18px;
@@ -93,7 +90,6 @@
         .about-title,
         .about-text {
             color      : $base-text-color;
-            font-style : normal;
             font-weight: 800;
             font-size  : 20px;
             line-height: 24px;

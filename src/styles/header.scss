@@ -9,21 +9,35 @@
     background-color: $primary-color-ligth;
 
     @media (min-width: 567px) {
-        padding        : 0 64px;
+        padding        : 0 $padding-desctop;
         height         : 96px;
         justify-content: space-between;
     }
-}
 
-.header__block-nav {
-    display        : none;
-    justify-content: flex-end;
-    min-width      : 360px;
+    &__block-logo {
+        display        : flex;
+        flex-direction : row;
+        justify-content: center;
+        align-items    : center;
 
-    .header__link {
+        @media (min-width: 567px) {
+            margin-right: 20px;
+        }
+    }
+
+    &__block-nav {
+        display        : none;
+        justify-content: flex-end;
+        min-width      : 360px;
+
+        @media (min-width: 567px) {
+            display: flex;
+        }
+    }
+
+    &__link {
         color          : $primary-color-dark;
         font-family    : 'Montserrat';
-        font-style     : normal;
         font-weight    : 500;
         font-size      : 16px;
         line-height    : 20px;
@@ -32,9 +46,5 @@
         &:not(:first-child) {
             margin-left: 32px;
         }
-    }
-
-    @media (min-width: 567px) {
-        display: flex;
     }
 }

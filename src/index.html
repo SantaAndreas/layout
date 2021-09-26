@@ -92,26 +92,25 @@
                 <div class="form__element-group form__element-group_second">
                     <label class="form__label">
                         Your country
-                        <input autocomplete="off" id='inputCountry' type="text" class="form__input form__element"
+                        <input id='inputCountry' type="text" class="form__input form__element"
                             placeholder="Where are you from?">
                     </label>
                     <label class="form__label">
                         Your City
-                        <input autocomplete="off" id='inputCity' type="text" class="form__input form__element"
+                        <input id='inputCity' type="text" class="form__input form__element"
                             placeholder="Your native city">
                     </label>
                     <label class="form__label">
                         Your date of birth
-                        <p class="test"></p>
-                        <input id='inputBirth' autocomplete="off" type="text" class="form__input form__element"
-                            placeholder="dd.mm.yyyy" maxlength='10'>
+                        <input id='inputBirth' type="text" class="form__input form__element" placeholder="dd.mm.yyyy"
+                            maxlength='10'>
                     </label>
                 </div>
                 <div class="form__element-group form__element-group_upload">
                     <p class="form__element-text">Proof your identity with some documents</p>
                     <label class="form__label form__label_load">
                         Add document
-                        <input autocomplete="off" type="file" class="form__input form__input_file-load">
+                        <input type="file" class="form__input form__input_file-load">
                     </label>
                 </div>
                 <div class="show-upload">
@@ -144,7 +143,48 @@
     </section>
     <!-- section slider -->
     <section class="section-slider" id='sectionSlider'>
+        <div class="section-slider__description">
+            <h2 class="section-slider__title">Slide this photo</h2>
+            <p class="section-slider__text">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                eu
+                fugiat
+                nulla pariatur</p>
+        </div>
+        <div class="slider">
+            <button class="slider__arrow slider__arrow_left"></button>
+            <button class="slider__arrow slider__arrow_rigth"></button>
+            <div class="slider__content">
+                <div class="slider__elements">
+                    <div class="slider__wrapper-element">
+                        <picture class="slider__item">
+                            <source srcset="./img/slider.png" media="(max-width: 375px)">
+                            <source srcset="./img/sliderDesctop.png" media="(min-width: 375px)">
+                            <img src="./img/slider.png" alt="slider-image">
+                        </picture>
+                    </div>
 
+                    <div class="slider__wrapper-element">
+                        <picture class="slider__item">
+                            <source srcset="./img/slider.png" media="(max-width: 375px)">
+                            <source srcset="./img/sliderDesctop.png" media="(min-width: 375px)">
+                            <img src="./img/slider.png" alt="slider-image">
+                        </picture>
+                    </div>
+
+                    <div class="slider__wrapper-element">
+                        <picture class="slider__item">
+                            <source srcset="./img/slider.png" media="(max-width: 375px)">
+                            <source srcset="./img/sliderDesctop.png" media="(min-width: 375px)">
+                            <img src="./img/slider.png" alt="slider-image">
+                        </picture>
+                    </div>
+
+                </div>
+            </div>
+            <button class="slider__dot slider__dot_middle"></button>
+            <button class="slider__dot slider__dot_left slider__dot_active"></button>
+            <button class="slider__dot slider__dot_rigth"></button>
+        </div>
     </section>
     <script src="./js/app.js"></script>
 </body>
