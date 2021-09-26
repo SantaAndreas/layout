@@ -356,7 +356,6 @@ function checkerBirth(e) {
   }
 
   if (inputBirth.value.length < 10 || currentValue[0] >= 4 || currentValue[0] >= 3 && currentValue[1] >= 2 || currentValue[3] > 1 || currentValue[4] > 2 || currentValue[6] > 3 || currentValue[6] >= 2 && currentValue[7] > 0 || currentValue[6] == 1 && currentValue[7] < 9 || currentValue[6] >= 2 && currentValue[8] > 1 || currentValue[6] >= 2 && currentValue[8] >= 1 && currentValue[9] > 1) {
-    console.log('false');
     inputBirth.classList.remove('form__input_valid');
     inputBirth.classList.add('form__input_not-valid');
     inputBirthValid = false;
@@ -364,7 +363,6 @@ function checkerBirth(e) {
     return false;
   }
 
-  console.log('true');
   inputBirth.classList.remove('form__input_not-valid');
   inputBirth.classList.add('form__input_valid');
   inputBirthValid = true;
@@ -423,7 +421,6 @@ leftArrow.addEventListener('click', function (e) {
   }
 
   startPosition -= widthImage;
-  console.log(startPosition);
   sliderElementsBlock.style.left = -startPosition + 'px';
   currentActiveDot--;
   dots.forEach(function (dot, indexDot) {
@@ -469,10 +466,8 @@ dots.forEach(function (item, index) {
       return subItem.classList.remove('slider__dot_active');
     });
     item.classList.add('slider__dot_active');
-    console.log(index);
     sliderElementsBlock.style.left = -(index * widthImage) + 'px';
     startPosition = index * widthImage;
-    console.log(sliderElementsBlock.style.left, startPosition);
   });
 });
 },{}],"js/app.js":[function(require,module,exports) {

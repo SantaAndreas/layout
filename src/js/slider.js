@@ -34,7 +34,6 @@ leftArrow.addEventListener('click', (e) => {
     }
 
     startPosition -= widthImage
-    console.log(startPosition)
     sliderElementsBlock.style.left = -startPosition + 'px'
     currentActiveDot--
 
@@ -72,7 +71,7 @@ rigthArrow.addEventListener('click', (e) => {
 
 // for correct check resize window 
 window.addEventListener('resize', () => {
-    widthImage = document.querySelector('.slider__wrapper-element').clientWidth;
+    widthImage = document.querySelector('.slider__wrapper-element').clientWidth
 });
 
 // function dot-change element 
@@ -82,9 +81,7 @@ dots.forEach((item, index) => {
         dots.forEach(subItem => subItem.classList.remove('slider__dot_active'))
         item.classList.add('slider__dot_active')
 
-        console.log(index)
         sliderElementsBlock.style.left = -(index * widthImage) + 'px'
         startPosition = (index * widthImage)
-        console.log(sliderElementsBlock.style.left, startPosition)
     })
 })

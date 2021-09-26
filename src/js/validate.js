@@ -281,7 +281,6 @@ function checkerBirth(e) {
         (currentValue[6] >= 2 && currentValue[8] > 1) ||
         (currentValue[6] >= 2 && currentValue[8] >= 1 && currentValue[9] > 1)
     ) {
-        console.log('false')
         inputBirth.classList.remove('form__input_valid')
         inputBirth.classList.add('form__input_not-valid')
         inputBirthValid = false
@@ -289,7 +288,6 @@ function checkerBirth(e) {
         return false
     }
 
-    console.log('true')
     inputBirth.classList.remove('form__input_not-valid')
     inputBirth.classList.add('form__input_valid')
     inputBirthValid = true
